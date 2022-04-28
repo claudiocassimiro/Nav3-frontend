@@ -1,12 +1,13 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Login.module.css'
-import { useState, useEffect, useRef } from 'react';
-import logo from '../public/logo.png';
+import React from "react";
+import Head from "next/head";
+import Image from "next/image";
+import styles from "../styles/Login.module.css";
+import { useState, useEffect, useRef } from "react";
+import logo from "../public/logo.png";
 
 export default function Login() {
-  const [inputEmail, setInputEmail] = useState('');
-  const [inputPassword, setInputPassword] = useState('');
+  const [inputEmail, setInputEmail] = useState("");
+  const [inputPassword, setInputPassword] = useState("");
   const [enableButton, setEnableButton] = useState(true);
   const [errorMessage, setErrorMessage] = useState(``);
   const emailInput = useRef(null);
@@ -28,7 +29,7 @@ export default function Login() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('submit');
+    console.log("submit");
 
     const payload = {
       email: inputEmail,
@@ -51,14 +52,12 @@ export default function Login() {
 
       <main className={styles.main}>
         <div className={styles.containerLogo}>
-          <Image
-            src={logo}
-            alt="Logo"
-            width={150}
-            height={150}
-          />
+          <Image src={logo} alt="Logo" width={150} height={150} />
         </div>
-        <form className={styles.formContainer} onSubmit={(e) => handleSubmit(e)}>
+        <form
+          className={styles.formContainer}
+          onSubmit={(e) => handleSubmit(e)}
+        >
           <input
             placeholder="Email"
             className={styles.input}
@@ -74,7 +73,9 @@ export default function Login() {
             onChange={(e) => setInputPassword(e.target.value)}
           />
 
-          {errorMessage && <p className={styles.errorMessage}>{errorMessage}</p>}
+          {errorMessage && (
+            <p className={styles.errorMessage}>{errorMessage}</p>
+          )}
 
           <button
             type="submit"
@@ -84,13 +85,10 @@ export default function Login() {
             Entrar
           </button>
         </form>
-        <a
-          className={styles.changePasswordLink}
-          href="#"
-        >
+        <a className={styles.changePasswordLink} href="#">
           Esqueci minha senha
         </a>
       </main>
     </div>
-  )
+  );
 }
