@@ -1,12 +1,30 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 import styles from './styles.module.css';
 
 export default function FormSearchData({
-  className
+  className,
+  setPeopleData,
 }) {
   const [inputData, setInputData] = useState('');
   const [selectData, setSelectData] = useState('nome');
+
+  useEffect(() => {
+    const getData = async () => {
+      // a requisição deve ser feita aqui
+      // passando o selectData para o body da request
+      // setPeopleData vai receber os dados do usuario.
+    };
+
+    if (selectData === 'id' && inputData.length > 0) {
+      getData();
+    }
+
+    if (selectData !== 'id' && inputData.length > 3) {
+      getData();
+    }
+  }, [inputData]);
+
   return (
     <form className={className}>
       <div className={styles.container}>
