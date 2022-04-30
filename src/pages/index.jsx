@@ -59,6 +59,7 @@ export default function Login() {
           onSubmit={(e) => handleSubmit(e)}
         >
           <input
+            type="text"
             placeholder="Email"
             className={styles.input}
             ref={emailInput}
@@ -67,6 +68,7 @@ export default function Login() {
           />
 
           <input
+            type="password"
             placeholder="Password"
             className={styles.input}
             value={inputPassword}
