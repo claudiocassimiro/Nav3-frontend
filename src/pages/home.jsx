@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import logo from "../public/logo.png";
 import { useDialogState } from "reakit/Dialog";
-import SearchModal from "../components/SearchModal";
+import DefaultModal from "../components/DefaultModal";
 
 import styles from "../styles/Home.module.css";
 import FormSearchData from "../components/FormSearchData";
@@ -36,7 +36,7 @@ export default function Home() {
         </div>
       </main>
       {modal.visible && (
-        <SearchModal modal={modal} windowTitle="Faça sua busca">
+        <DefaultModal modal={modal} windowTitle="Faça sua busca">
           <>
             <FormSearchData setPeopleData={setPeopleData} />
             {peopleData.name && (
@@ -45,7 +45,7 @@ export default function Home() {
               </div>
             )}
           </>
-        </SearchModal>
+        </DefaultModal>
       )}
     </div>
   );
