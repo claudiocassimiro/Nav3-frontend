@@ -75,7 +75,6 @@
 
 .form {
   width: 100%;
-  height: 100%;
 }
 
 /* Small devices (landscape phones, 576px and up) */
@@ -88,7 +87,7 @@
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
   .content {
-    height: auto;
+    height: 50rem;
     max-width: 56rem;
     max-height: 67.5rem;
     border-radius: 0.8rem;
